@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.menu{
+    width: 1000px;
+    margin: 30px auto; /*margen de 30px de arriba y abajo y automatico en los costados asi se centra*/
+    background: yellow;
+}
+
+.menu ul{
+    list-style: none; /*para que no tenga ningun tipo de lista.*/
+}
+
+.menu-horizontal > li{ /*asi llamamos a la lista del menu horizontal.*/
+    position: relative;
+    display: inline-block; /*para que el menu horizontal este uno al lado del otro*/
+}
+
+.menu-horizontal > li > a{ /*para llamar solo a li y a del menu horizontal.*/
+    display: block;
+    padding: 15px 20px; /*relleno de 15 arriba y abajo y 20 en los costados*/
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+}
+
+.menu-horizontal li a:hover{ /*si ponemos asi, llamamos a los hijos y los nietos de la clase*/
+    color: gray;
+}
+
+.menu-vertical{
+    position: absolute; /*asi el menu vertical se va hacia abajo.*/
+    background-color: yellowgreen;
+    visibility: hidden; /*para que el menu vertical desaparezca*/
+    opacity: 0;
+    transition: opacity 1.5s; /*esto es para que el submenu se despliegue mas lento*/
+}
+
+.menu-vertical li a{
+    display: block;
+    padding: 15px;
+    color: black;
+    font-family: fantasy;
+    text-decoration: none;
+}
+
+.menu-horizontal li:hover .menu-vertical{ /*poniendo asi, hacemos que el menu vertical aparezca cuando pasamos
+    el cursor sobre "cursos" que es donde esta el submenu. */
+    visibility: visible;
+    opacity: 1; /*esto es para que el submenu se despliegue mas lento*/
+}
